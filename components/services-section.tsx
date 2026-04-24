@@ -53,7 +53,7 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+          <span className="ai-section-kicker inline-block text-accent mb-4">
             Our Services
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
@@ -71,7 +71,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <Card
               key={service.title}
-              className="group border-border bg-card hover:shadow-lg hover:border-accent/30 transition-all duration-300"
+              className="ai-card-glow group border-border bg-card/80 backdrop-blur-[2px]"
             >
               <CardHeader className="pb-4">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

@@ -11,10 +11,11 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-primary pt-16 lg:pt-20"
+      className="relative min-h-screen flex items-center justify-center bg-primary pt-16 lg:pt-20 overflow-hidden"
     >
+      <div className="ai-hero-backdrop" aria-hidden />
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.07]">
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
@@ -23,7 +24,11 @@ export function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full px-4 py-2 mb-8 backdrop-blur-sm shadow-[0_0_24px_-4px_oklch(0.72_0.14_210_/_0.25)]">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 shadow-[0_0_10px_oklch(0.72_0.14_210_/_0.8)] animate-pulse"
+              aria-hidden
+            />
             <span className="text-sm font-medium text-primary-foreground">
               Trusted by 500+ Companies Across Asia
             </span>
@@ -32,7 +37,9 @@ export function HeroSection() {
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6">
             <span className="block text-balance">Protecting Your</span>
-            <span className="block text-primary-foreground/80 text-balance">Innovations</span>
+            <span className="block text-balance ai-text-shimmer">
+              Innovations
+            </span>
           </h1>
 
           {/* Subheadline */}

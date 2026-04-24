@@ -34,7 +34,7 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+            <span className="ai-section-kicker inline-block text-accent mb-4">
               About Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
@@ -67,7 +67,7 @@ export function AboutSection() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-card rounded-2xl p-6 lg:p-8 border border-border shadow-sm hover:shadow-md transition-shadow"
+                className="ai-card-glow bg-card/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border shadow-sm"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <stat.icon className="h-6 w-6 text-primary" />

@@ -52,7 +52,7 @@ export function WhyChooseUsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-accent uppercase tracking-wider mb-4">
+          <span className="ai-section-kicker inline-block text-accent mb-4">
             Why Choose Us
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
@@ -76,7 +76,7 @@ export function WhyChooseUsSection() {
                 {index + 1}
               </div>
               
-              <div className="h-full p-6 lg:p-8 rounded-2xl border border-border bg-card hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+              <div className="ai-card-glow h-full p-6 lg:p-8 rounded-2xl border border-border bg-card/80 backdrop-blur-[2px]">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <reason.icon className="h-6 w-6 text-accent" />
                 </div>

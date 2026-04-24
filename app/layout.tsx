@@ -1,12 +1,17 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Geist_Mono, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-inter'
-});
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: '--font-mono',
+})
 
 export const metadata: Metadata = {
   title: 'EasyIP Group Pte Ltd | Protecting Your Innovations',
@@ -15,7 +20,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0f172a',
+  themeColor: '#172554',
 }
 
 export default function RootLayout({
@@ -25,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -21,7 +21,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="relative bg-foreground text-background">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
+        aria-hidden
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
