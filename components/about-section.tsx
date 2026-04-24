@@ -43,7 +43,7 @@ export function AboutSection() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p className="text-pretty">
                 Founded with a vision to democratize intellectual property protection, 
-                EasyIP Group Pte Ltd has grown to become one of Singapore&apos;s most 
+                EasyIP Group has grown to become one of Singapore&apos;s most 
                 respected IP consultancies. Our team of experienced professionals 
                 brings together expertise in law, technology, and business strategy.
               </p>

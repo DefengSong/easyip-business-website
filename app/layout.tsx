@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'EasyIP Group Pte Ltd | Protecting Your Innovations',
+  title: 'EasyIP Group | Protecting Your Innovations',
   description: 'Singapore-based IP consultancy specializing in patent applications, trademark registration, IP strategy, and dispute resolution. Protect your intellectual property with our expert team.',
   keywords: ['IP consultancy', 'patent applications', 'trademark registration', 'Singapore', 'intellectual property', 'IP strategy'],
 }

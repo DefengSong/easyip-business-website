@@ -22,12 +22,9 @@ export function Header() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
             <Shield className="h-8 w-8 text-primary-foreground" />
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary-foreground leading-tight">
-                EasyIP
-              </span>
-              <span className="text-xs text-primary-foreground/70">
-                Group Pte Ltd
+            <div className="flex flex-col justify-center">
+              <span className="text-xl font-bold text-primary-foreground leading-tight tracking-tight">
+                EasyIP Group
               </span>
             </div>
           </a>

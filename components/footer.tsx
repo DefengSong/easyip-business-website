@@ -33,20 +33,16 @@ export function Footer() {
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-4">
               <Shield className="h-8 w-8 text-background" />
-              <div className="flex flex-col">
-                <span className="text-lg font-bold text-background leading-tight">
+              <div className="flex flex-col justify-center">
+                <span className="text-lg font-bold text-background leading-tight tracking-tight">
                   EasyIP Group
                 </span>
-                <span className="text-xs text-background/70">Pte Ltd</span>
               </div>
             </a>
-            <p className="text-background/70 text-sm leading-relaxed mb-4">
+            <p className="text-background/70 text-sm leading-relaxed">
               Singapore&apos;s premier intellectual property consultancy, 
               helping businesses protect and leverage their innovations 
               since 2009.
-            </p>
-            <p className="text-background/70 text-sm">
-              UEN: 200912345A
             </p>
           </div>
 
@@ -123,7 +119,7 @@ export function Footer() {
         <div className="border-t border-background/10 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-background/50 text-center sm:text-left">
-              &copy; {currentYear} EasyIP Group Pte Ltd. All rights reserved.
+              &copy; {currentYear} EasyIP Group. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a
