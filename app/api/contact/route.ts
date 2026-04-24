@@ -1,7 +1,11 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+function getResend() {
+  const key = process.env.RESEND_API_KEY
+  if (!key) return null
+  return new Resend(key)
+}
 
 export async function POST(request: Request) {
   try {
@@ -15,9 +19,18 @@ export async function POST(request: Request) {
       )
     }
 
+    const resend = getResend()
+    if (!resend) {
+      console.error("RESEND_API_KEY is not set")
+      return NextResponse.json(
+        { error: "Contact form is not configured. Please try again later." },
+        { status: 503 }
+      )
+    }
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: from: "EasyIP Contact Form <info@easyipgroup.com>",
+      from: "EasyIP Contact Form <info@easyipgroup.com>",
       to: "songdefeng@yahoo.com",
       subject: `New Contact Form Submission from ${name}`,
       html: `
