@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["songdefeng@yahoo.com"],
+    details: ["info@easyipgroup.com"],
   },
 ]
 
