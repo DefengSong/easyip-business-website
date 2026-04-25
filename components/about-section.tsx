@@ -15,8 +15,8 @@ const stats = [
   },
   {
     icon: Globe,
-    value: "50+",
-    label: "Countries",
+    value: "20+",
+    label: "Countries/Jurisdictions",
     description: "Global IP protection network",
   },
   {
