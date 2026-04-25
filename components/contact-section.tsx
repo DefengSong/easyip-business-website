@@ -95,9 +95,13 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="ai-card-glow bg-card/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border/60">
-            <h3 className="text-2xl font-bold text-card-foreground mb-6">
+            <h3 className="text-2xl font-bold text-card-foreground mb-2">
               Send Us a Message
             </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Your message is delivered to our team through our website mail service.
+              The address you enter below is set as the <strong className="text-foreground/80">Reply-To</strong> address, so when we respond, our reply goes directly to your inbox (not through a generic sender).
+            </p>
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
