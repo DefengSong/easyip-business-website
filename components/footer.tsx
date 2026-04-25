@@ -91,16 +91,16 @@ export function Footer() {
             </h3>
             <address className="not-italic space-y-3 text-sm text-background/70">
               <p>
-                1 Raffles Place, #20-61
+                3 Gambas Crescent #04-01
                 <br />
-                Tower 2, Singapore 048616
+                Nordcom 1 Singapore 757088
               </p>
               <p>
                 <a
-                  href="tel:+6561234567"
+                  href="tel:+6590165019"
                   className="hover:text-background transition-colors"
                 >
-                  +65 6123 4567
+                  +65 90165019
                 </a>
               </p>
               <p>
