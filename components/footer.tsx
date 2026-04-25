@@ -105,10 +105,10 @@ export function Footer() {
               </p>
               <p>
                 <a
-                  href="mailto:info@easyipgroup.com.sg"
+                  href="mailto:info@easyipgroup.com"
                   className="hover:text-background transition-colors"
                 >
-                  info@easyipgroup.com.sg
+                  info@easyipgroup.com
                 </a>
               </p>
             </address>
