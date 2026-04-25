@@ -10,10 +10,16 @@ import {
 
 const services = [
   {
-    icon: Lightbulb,
-    title: "IP Strategy",
+    icon: BadgeCheck,
+    title: "Trademark Applications",
     description:
-      "Develop comprehensive intellectual property strategies aligned with your business goals. We help you identify, prioritize, and maximize the value of your IP portfolio.",
+      "Protect your brand identity with strategic trademark registration. We handle searches, applications, and registrations across multiple jurisdictions.",
+  },
+  {
+    icon: Copyright,
+    title: "Copyright Registrations",
+    description:
+      "Secure your creative works with strategic copyright registration and advisory support. We help you establish clear ownership and strengthen protection across relevant jurisdictions.",
   },
   {
     icon: FileText,
@@ -22,10 +28,10 @@ const services = [
       "Expert guidance through the patent application process across jurisdictions worldwide. From drafting to prosecution, we ensure your inventions receive robust protection.",
   },
   {
-    icon: BadgeCheck,
-    title: "Trademark Registration",
+    icon: Lightbulb,
+    title: "IP Strategy",
     description:
-      "Protect your brand identity with strategic trademark registration. We handle searches, applications, and registrations across multiple jurisdictions.",
+      "Develop comprehensive intellectual property strategies aligned with your business goals. We help you identify, prioritize, and maximize the value of your IP portfolio.",
   },
   {
     icon: Handshake,
@@ -35,15 +41,9 @@ const services = [
   },
   {
     icon: Scale,
-    title: "Dispute Resolution",
+    title: "Dispute Resolutions",
     description:
       "Resolve IP disputes efficiently through negotiation, mediation, or litigation support. We protect your rights while minimizing business disruption.",
-  },
-  {
-    icon: Copyright,
-    title: "Copyright Registration",
-    description:
-      "Secure your creative works with strategic copyright registration and advisory support. We help you establish clear ownership and strengthen protection across relevant jurisdictions.",
   },
 ]
 
