@@ -30,7 +30,7 @@ export function HeroSection() {
               aria-hidden
             />
             <span className="text-sm font-medium text-primary-foreground">
-              Trusted by 500+ Customers Across Asia
+              Trusted by 500+ Customers Worldwide
             </span>
           </div>
 
