@@ -19,7 +19,7 @@ const services = [
     icon: FileText,
     title: "Patent Applications",
     description:
-      "Expert guidance through the patent application process in Singapore and internationally. From drafting to prosecution, we ensure your inventions receive robust protection.",
+      "Expert guidance through the patent application process across jurisdictions worldwide. From drafting to prosecution, we ensure your inventions receive robust protection.",
   },
   {
     icon: BadgeCheck,
