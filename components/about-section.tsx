@@ -21,9 +21,9 @@ const stats = [
   },
   {
     icon: Clock,
-    value: "98%",
+    value: "90%+",
     label: "Success Rate",
-    description: "Patent application approvals",
+    description: "Trademark application approvals",
   },
 ]
 
