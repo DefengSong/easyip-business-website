@@ -5,7 +5,7 @@ import {
   BadgeCheck, 
   Handshake, 
   Scale, 
-  Search 
+  Copyright
 } from "lucide-react"
 
 const services = [
@@ -40,10 +40,10 @@ const services = [
       "Resolve IP disputes efficiently through negotiation, mediation, or litigation support. We protect your rights while minimizing business disruption.",
   },
   {
-    icon: Search,
-    title: "IP Due Diligence",
+    icon: Copyright,
+    title: "Copyright Registration",
     description:
-      "Comprehensive IP audits and due diligence for mergers, acquisitions, and investments. Uncover risks and opportunities in your IP assets.",
+      "Secure your creative works with strategic copyright registration and advisory support. We help you establish clear ownership and strengthen protection across relevant jurisdictions.",
   },
 ]
 
