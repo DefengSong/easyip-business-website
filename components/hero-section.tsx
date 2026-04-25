@@ -75,7 +75,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base"
+              className="bg-transparent border-primary-foreground/35 text-primary-foreground hover:bg-primary-foreground/12 hover:text-primary-foreground px-8 py-6 text-base"
               asChild
             >
               <a href="#services">Explore Our Services</a>
