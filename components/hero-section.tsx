@@ -44,7 +44,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-8 leading-relaxed text-pretty">
-          EasyIP Group is Singapore&apos;s premier intellectual property consultancy. 
+          EasyIP Group is a world-class intellectual property consultancy firm.
             We help businesses secure, manage, and leverage their IP assets for sustainable competitive advantage.
           </p>
 
