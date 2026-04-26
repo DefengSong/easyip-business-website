@@ -40,8 +40,8 @@ export function Footer() {
               </div>
             </a>
             <p className="text-background/70 text-sm leading-relaxed">
-              Singapore&apos;s premier intellectual property consultancy, 
-              helping businesses protect and leverage their innovations 
+            EasyIP Group is a world-class intellectual property consultancy firm, 
+            helping businesses protect and leverage their innovations 
               since 2009.
             </p>
           </div>
