@@ -12,7 +12,7 @@ const reasons = [
     icon: ShieldCheck,
     title: "Proven Track Record",
     description:
-      "With a 98% success rate in patent applications and thousands of satisfied clients, our expertise speaks for itself.",
+      "With a 90%+ success rate in intellectual property applications and thousands of satisfied clients, our expertise speaks for itself.",
   },
   {
     icon: Zap,
