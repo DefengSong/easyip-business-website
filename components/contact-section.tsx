@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldLabel, FieldGroup } from "@/components/ui/field"
+import { Reveal } from "@/components/reveal"
 
 const contactInfo = [
   {
@@ -79,7 +80,7 @@ export function ContactSection() {
       <div className="ai-hero-backdrop opacity-90" aria-hidden />
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="ai-section-kicker inline-block text-accent mb-4">
             Contact Us
           </span>
@@ -90,11 +91,12 @@ export function ContactSection() {
             Ready to protect your innovations? Get in touch with our team 
             for a free initial consultation.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="ai-card-glow bg-card/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-border/60">
+          <Reveal>
+          <div className="dynamic-card ai-card-glow rounded-md border border-border/60 bg-card/95 p-8 shadow-lg backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-card-foreground mb-2">
               Send Us a Message
             </h3>
@@ -134,7 +136,7 @@ export function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="bg-background"
+                      className="bg-background transition-shadow focus-visible:ring-accent/20"
                     />
                   </Field>
 
@@ -148,7 +150,7 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-background"
+                      className="bg-background transition-shadow focus-visible:ring-accent/20"
                     />
                   </Field>
 
@@ -161,7 +163,7 @@ export function ContactSection() {
                       placeholder="+65 9123 4567"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="bg-background"
+                      className="bg-background transition-shadow focus-visible:ring-accent/20"
                     />
                   </Field>
 
@@ -175,7 +177,7 @@ export function ContactSection() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="bg-background resize-none"
+                      className="resize-none bg-background transition-shadow focus-visible:ring-accent/20"
                     />
                   </Field>
 
@@ -186,7 +188,7 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full"
+                    className="w-full hover:-translate-y-0.5"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -202,13 +204,14 @@ export function ContactSection() {
               </form>
             )}
           </div>
+          </Reveal>
 
           {/* Contact Information */}
-          <div className="flex flex-col justify-center">
+          <Reveal delay={120} className="flex flex-col justify-center">
             <div className="space-y-8">
               {contactInfo.map((item) => (
-                <div key={item.title} className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+                <div key={item.title} className="group flex items-start gap-5">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-md bg-primary-foreground/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-primary-foreground/15">
                     <item.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
                   <div>
@@ -227,7 +230,22 @@ export function ContactSection() {
                 </div>
               ))}
             </div>
-          </div>
+            <div className="mt-10 grid grid-cols-2 gap-3">
+              <div className="rounded-md border border-primary-foreground/12 bg-primary-foreground/8 p-4 backdrop-blur-sm">
+                <div className="mb-1 flex items-center gap-2 text-sm font-semibold text-primary-foreground">
+                  <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_var(--accent)] animate-pulse" />
+                  24h
+                </div>
+                <p className="text-sm text-primary-foreground/65">Typical first response</p>
+              </div>
+              <div className="rounded-md border border-primary-foreground/12 bg-primary-foreground/8 p-4 backdrop-blur-sm">
+                <div className="mb-1 text-sm font-semibold text-primary-foreground">
+                  Free
+                </div>
+                <p className="text-sm text-primary-foreground/65">Initial consultation</p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

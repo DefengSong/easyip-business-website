@@ -1,5 +1,3 @@
-"use client"
-
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
@@ -10,7 +8,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="relative z-[1] min-h-screen bg-red-500">
+    <main className="relative z-[1] min-h-screen overflow-x-hidden bg-background">
       <Header />
       <HeroSection />
       <ServicesSection />

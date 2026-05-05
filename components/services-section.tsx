@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Reveal } from "@/components/reveal"
 import { 
   Lightbulb, 
   FileText, 
@@ -47,12 +48,23 @@ const services = [
   },
 ]
 
+const serviceSignals = [
+  "Portfolio health checks",
+  "Trademark clearance",
+  "Patent drafting",
+  "Licensing terms",
+  "IP due diligence",
+  "Market expansion",
+  "Dispute readiness",
+  "Renewal tracking",
+]
+
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-background">
+    <section id="services" className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="mx-auto mb-10 max-w-3xl text-center">
           <span className="ai-section-kicker inline-block text-accent mb-4">
             Our Services
           </span>
@@ -64,29 +76,40 @@ export function ServicesSection() {
             our expert team provides end-to-end intellectual property services 
             tailored to your business needs.
           </p>
-        </div>
+        </Reveal>
+
+        <Reveal delay={120} className="mx-auto mb-12 max-w-5xl">
+          <div className="signal-marquee" aria-hidden>
+            <div className="signal-marquee-track">
+              {[...serviceSignals, ...serviceSignals].map((signal, index) => (
+                <span key={`${signal}-${index}`} className="signal-pill">
+                  {signal}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="ai-card-glow group border-border bg-card/80 backdrop-blur-[2px]"
-            >
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="h-7 w-7 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-semibold text-card-foreground">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={160 + index * 70} className="h-full">
+              <Card className="dynamic-card ai-card-glow group h-full border-border bg-card/80 backdrop-blur-[2px]">
+                <CardHeader className="pb-4">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-md bg-primary/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-primary/20 group-hover:shadow-[0_16px_34px_-24px_var(--ai-glow-cyan)]">
+                    <service.icon className="h-7 w-7 text-primary transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-card-foreground transition-colors group-hover:text-primary">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -31,10 +31,10 @@ export function Footer() {
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-4">
-              <Shield className="h-8 w-8 text-background" />
+            <a href="#home" className="group mb-4 flex items-center gap-2">
+              <Shield className="h-8 w-8 text-background transition-transform duration-300 group-hover:rotate-6" />
               <div className="flex flex-col justify-center">
-                <span className="text-lg font-bold text-background leading-tight tracking-tight">
+                <span className="text-lg font-bold text-background leading-tight">
                   EasyIP Group
                 </span>
               </div>

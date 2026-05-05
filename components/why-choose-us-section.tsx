@@ -6,6 +6,7 @@ import {
   GraduationCap, 
   Clock 
 } from "lucide-react"
+import { Reveal } from "@/components/reveal"
 
 const reasons = [
   {
@@ -51,7 +52,7 @@ export function WhyChooseUsSection() {
     <section id="why-us" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="ai-section-kicker inline-block text-accent mb-4">
             Why Choose Us
           </span>
@@ -62,32 +63,31 @@ export function WhyChooseUsSection() {
             Discover why leading businesses across the world 
             choose EasyIP Group as their trusted intellectual property partner.
           </p>
-        </div>
+        </Reveal>
 
         {/* Reasons Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {reasons.map((reason, index) => (
-            <div
-              key={reason.title}
-              className="relative group"
-            >
-              {/* Number Badge */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center">
-                {index + 1}
-              </div>
-              
-              <div className="ai-card-glow h-full p-6 lg:p-8 rounded-2xl border border-border bg-card/80 backdrop-blur-[2px]">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <reason.icon className="h-6 w-6 text-accent" />
+            <Reveal key={reason.title} delay={index * 80} className="h-full">
+              <div className="relative h-full group">
+                {/* Number Badge */}
+                <div className="absolute -left-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground shadow-[0_10px_24px_-18px_var(--primary)]">
+                  {index + 1}
                 </div>
-                <h3 className="text-lg font-semibold text-card-foreground mb-3">
-                  {reason.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {reason.description}
-                </p>
+
+                <div className="dynamic-card ai-card-glow h-full rounded-md border border-border bg-card/80 p-6 backdrop-blur-[2px] lg:p-8">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-accent/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-accent/20">
+                    <reason.icon className="h-6 w-6 text-accent transition-transform duration-300 group-hover:scale-110" />
+                  </div>
+                  <h3 className="mb-3 text-lg font-semibold text-card-foreground transition-colors group-hover:text-primary">
+                    {reason.title}
+                  </h3>
+                  <p className="leading-relaxed text-muted-foreground">
+                    {reason.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
