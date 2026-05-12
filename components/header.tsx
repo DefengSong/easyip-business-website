@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Shield } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { BrandLogo } from "@/components/brand-logo"
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -69,7 +70,7 @@ export function Header() {
       )}
     >
       <div
-        className="absolute left-0 top-0 h-0.5 bg-gradient-to-r from-accent via-[var(--ai-glow-gold)] to-[var(--ai-glow-violet)] transition-[width] duration-150"
+        className="absolute left-0 top-0 h-0.5 bg-gradient-to-r from-accent via-[var(--brand-blue)] to-[var(--brand-sky)] transition-[width] duration-150"
         style={{ width: `${scrollProgress}%` }}
         aria-hidden
       />
@@ -82,12 +83,11 @@ export function Header() {
         >
           {/* Logo */}
           <a href="#home" className="group flex items-center gap-2">
-            <Shield className="h-8 w-8 text-primary-foreground transition-transform duration-300 group-hover:rotate-6" />
-            <div className="flex flex-col justify-center">
-              <span className="text-xl font-bold text-primary-foreground leading-tight">
-                EasyIP Group
-              </span>
-            </div>
+            <BrandLogo
+              priority
+              className="transition-transform duration-300 group-hover:-translate-y-0.5"
+              imageClassName={cn(isScrolled ? "h-8 lg:h-9" : "h-9 lg:h-10")}
+            />
           </a>
 
           {/* Desktop Navigation */}
