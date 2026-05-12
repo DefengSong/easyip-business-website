@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   title: 'EasyIP Group | Protecting Your Innovations',
   description: 'Singapore-based IP consultancy specializing in patent applications, trademark registration, IP strategy, and dispute resolution. Protect your intellectual property with our expert team.',
   keywords: ['IP consultancy', 'patent applications', 'trademark registration', 'Singapore', 'intellectual property', 'IP strategy'],
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=20260512a', sizes: 'any' },
+      { url: '/favicon-32x32.png?v=20260512a', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png?v=20260512a', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png?v=20260512a', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico?v=20260512a'],
+  },
 }
 
 export const viewport: Viewport = {
