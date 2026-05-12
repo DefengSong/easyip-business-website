@@ -86,7 +86,6 @@ export function Header() {
             <BrandLogo
               priority
               className="transition-transform duration-300 group-hover:-translate-y-0.5"
-              imageClassName={cn(isScrolled ? "h-8 lg:h-9" : "h-9 lg:h-10")}
             />
           </a>
 

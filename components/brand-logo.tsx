@@ -15,17 +15,17 @@ export function BrandLogo({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-md bg-white px-2.5 py-1.5 shadow-[0_12px_34px_-24px_var(--primary)] ring-1 ring-primary/10",
+        "inline-flex h-9 items-center rounded-md bg-white px-2 py-1 shadow-[0_12px_34px_-24px_var(--primary)] ring-1 ring-primary/10",
         className
       )}
     >
       <Image
-        src="/easyip-logo.png"
+        src="/easyip-logo.png?v=20260512"
         alt="EasyIP Group"
-        width={188}
-        height={59}
+        width={871}
+        height={167}
         priority={priority}
-        className={cn("h-8 w-auto object-contain", imageClassName)}
+        className={cn("h-7 w-auto object-contain", imageClassName)}
       />
     </span>
   )
