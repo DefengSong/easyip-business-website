@@ -36,8 +36,7 @@ export function Footer() {
             </a>
             <p className="text-background/70 text-sm leading-relaxed">
             EasyIP Group is a world-class intellectual property consultancy firm, 
-            helping businesses protect and leverage their innovations 
-              since 2009.
+            helping businesses protect and leverage their innovations.
             </p>
           </div>
 
