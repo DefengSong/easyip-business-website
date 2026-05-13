@@ -1,20 +1,20 @@
 import { BrandLogo } from "@/components/brand-logo"
 
 const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "About Us", href: "#about" },
-  { name: "Why Choose Us", href: "#why-us" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "Services", href: "/#services" },
+  { name: "About Us", href: "/#about" },
+  { name: "Why Choose Us", href: "/#why-us" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 const services = [
-  { name: "IP Strategy", href: "#services" },
-  { name: "Patent Applications", href: "#services" },
-  { name: "Trademark Registration", href: "#services" },
-  { name: "IP Transactions", href: "#services" },
-  { name: "Dispute Resolution", href: "#services" },
-  { name: "IP Due Diligence", href: "#services" },
+  { name: "IP Strategy", href: "/#services" },
+  { name: "Patent Applications", href: "/#services" },
+  { name: "Trademark Registration", href: "/#services" },
+  { name: "IP Transactions", href: "/#services" },
+  { name: "Dispute Resolution", href: "/#services" },
+  { name: "IP Due Diligence", href: "/#services" },
 ]
 
 export function Footer() {
@@ -31,7 +31,7 @@ export function Footer() {
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <a href="#home" className="group mb-4 flex items-center gap-2">
+            <a href="/#home" className="group mb-4 flex items-center gap-2">
               <BrandLogo className="transition-transform duration-300 group-hover:-translate-y-0.5" />
             </a>
             <p className="text-background/70 text-sm leading-relaxed">
@@ -118,7 +118,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-sm text-background/50 hover:text-background transition-colors"
               >
                 Privacy Policy

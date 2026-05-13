@@ -124,84 +124,100 @@ export function ContactSection() {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <FieldGroup>
-                  <Field>
-                    <FieldLabel htmlFor="name">Full Name *</FieldLabel>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="bg-background transition-shadow focus-visible:ring-accent/20"
-                    />
-                  </Field>
+              <>
+                <form onSubmit={handleSubmit}>
+                  <FieldGroup>
+                    <Field>
+                      <FieldLabel htmlFor="name">Full Name *</FieldLabel>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="bg-background transition-shadow focus-visible:ring-accent/20"
+                      />
+                    </Field>
 
-                  <Field>
-                    <FieldLabel htmlFor="email">Email Address *</FieldLabel>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="bg-background transition-shadow focus-visible:ring-accent/20"
-                    />
-                  </Field>
+                    <Field>
+                      <FieldLabel htmlFor="email">Email Address *</FieldLabel>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="john@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="bg-background transition-shadow focus-visible:ring-accent/20"
+                      />
+                    </Field>
 
-                  <Field>
-                    <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+65 9123 4567"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="bg-background transition-shadow focus-visible:ring-accent/20"
-                    />
-                  </Field>
+                    <Field>
+                      <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+65 9123 4567"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="bg-background transition-shadow focus-visible:ring-accent/20"
+                      />
+                    </Field>
 
-                  <Field>
-                    <FieldLabel htmlFor="message">Message *</FieldLabel>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your IP needs..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="resize-none bg-background transition-shadow focus-visible:ring-accent/20"
-                    />
-                  </Field>
+                    <Field>
+                      <FieldLabel htmlFor="message">Message *</FieldLabel>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your IP needs..."
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        className="resize-none bg-background transition-shadow focus-visible:ring-accent/20"
+                      />
+                    </Field>
 
-                  {error && (
-                    <p className="text-destructive text-sm">{error}</p>
-                  )}
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full hover:-translate-y-0.5"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="ml-2 h-4 w-4" />
-                      </>
+                    {error && (
+                      <p className="text-destructive text-sm">{error}</p>
                     )}
-                  </Button>
-                </FieldGroup>
-              </form>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full hover:-translate-y-0.5"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Sending..."
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </Button>
+                  </FieldGroup>
+                </form>
+                <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                  By submitting this form, you agree that EASYIP GROUP PTE.
+                  LTD. may collect and use your name, email address, phone
+                  number, and message content to respond to your enquiry,
+                  provide consultation or service information, and manage
+                  related communications in accordance with our{" "}
+                  <a
+                    href="/privacy-policy"
+                    className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-accent"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </>
             )}
           </div>
           </Reveal>
