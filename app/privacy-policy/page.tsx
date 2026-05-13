@@ -19,11 +19,11 @@ function PolicySection({
   children: React.ReactNode
 }) {
   return (
-    <section className="border-t border-border/70 pt-8 first:border-t-0 first:pt-0">
-      <h2 className="text-2xl font-semibold tracking-normal text-foreground">
+    <section className="border-t border-border/70 pt-6 first:border-t-0 first:pt-0">
+      <h2 className="text-xl font-semibold tracking-normal text-foreground">
         {title}
       </h2>
-      <div className="mt-4 space-y-4 text-base leading-7 text-muted-foreground">
+      <div className="mt-3 space-y-3 text-sm leading-6 text-muted-foreground">
         {children}
       </div>
     </section>
@@ -32,7 +32,7 @@ function PolicySection({
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="list-disc space-y-2 pl-5">
+    <ul className="list-disc space-y-1 pl-5">
       {items.map((item) => (
         <li key={item}>{item}</li>
       ))}
@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
         <div className="ai-hero-backdrop opacity-35" aria-hidden />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="mt-4 text-4xl font-bold tracking-normal text-foreground sm:text-5xl">
               Privacy Policy
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
+            <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
               This policy explains how EASYIP GROUP PTE. LTD. collects, uses,
               discloses, stores, and protects personal data in connection with
               our website, enquiries, consultations, communications, and
@@ -86,9 +86,9 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20 lg:pb-24">
+      <section className="pb-12 sm:pb-14 lg:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl space-y-10 rounded-md border border-border/70 bg-card/95 p-6 shadow-sm sm:p-8 lg:p-10">
+          <div className="mx-auto max-w-4xl space-y-8 rounded-md border border-border/70 bg-card/95 p-5 shadow-sm sm:p-7 lg:p-8">
             <PolicySection title="1. Introduction">
               <p>
                 EASYIP GROUP PTE. LTD. ("EasyIP Group", "we", "us", or "our")
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
             </PolicySection>
 
             <PolicySection title="3. Personal Data We Collect">
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-base font-semibold text-foreground">
                 3.1 Information You Provide Through Our Website
               </h3>
               <p>
@@ -154,7 +154,7 @@ export default function PrivacyPolicyPage() {
                 address so that we can respond directly to the sender.
               </p>
 
-              <h3 className="pt-2 text-lg font-semibold text-foreground">
+              <h3 className="pt-1 text-base font-semibold text-foreground">
                 3.2 IP and Service-Related Information
               </h3>
               <p>
@@ -172,7 +172,7 @@ export default function PrivacyPolicyPage() {
                 ]}
               />
 
-              <h3 className="pt-2 text-lg font-semibold text-foreground">
+              <h3 className="pt-1 text-base font-semibold text-foreground">
                 3.3 Technical and Website Usage Data
               </h3>
               <p>
@@ -194,7 +194,7 @@ export default function PrivacyPolicyPage() {
                 ]}
               />
 
-              <h3 className="pt-2 text-lg font-semibold text-foreground">
+              <h3 className="pt-1 text-base font-semibold text-foreground">
                 3.4 Third-Party Tools and Tracking Technologies
               </h3>
               <p>
@@ -212,7 +212,7 @@ export default function PrivacyPolicyPage() {
                 technologies.
               </p>
 
-              <h3 className="pt-2 text-lg font-semibold text-foreground">
+              <h3 className="pt-1 text-base font-semibold text-foreground">
                 3.5 Information From Third Parties
               </h3>
               <p>
