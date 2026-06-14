@@ -1,4 +1,5 @@
 import { BrandLogo } from "@/components/brand-logo"
+import { NewsletterForm } from "@/components/newsletter-form"
 
 const quickLinks = [
   { name: "Home", href: "/#home" },
@@ -27,6 +28,20 @@ export function Footer() {
         aria-hidden
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Newsletter */}
+        <div className="flex flex-col gap-6 border-b border-background/10 py-10 lg:flex-row lg:items-center lg:justify-between lg:py-12">
+          <div className="max-w-md">
+            <h3 className="text-lg font-semibold text-background">
+              Stay ahead on IP insights
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-background/70">
+              Subscribe for occasional intellectual property updates,
+              guidance, and EasyIP news. No spam — unsubscribe anytime.
+            </p>
+          </div>
+          <NewsletterForm className="lg:max-w-md lg:flex-1" />
+        </div>
+
         {/* Main Footer */}
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Company Info */}
