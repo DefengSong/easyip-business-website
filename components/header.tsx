@@ -63,10 +63,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 border-b border-primary-foreground/10 backdrop-blur-md transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-all duration-300",
         isScrolled
-          ? "bg-primary/92 shadow-[0_18px_50px_-30px_oklch(0.2_0.04_265_/_0.75)]"
-          : "bg-primary/74 shadow-[0_1px_0_0_oklch(0.72_0.14_210_/_0.12)]"
+          ? "border-border bg-background/95 shadow-[0_10px_34px_-22px_oklch(0.33_0.115_264_/_0.5)]"
+          : "border-border/60 bg-background/85"
       )}
     >
       <div
@@ -78,15 +78,28 @@ export function Header() {
         <div
           className={cn(
             "flex items-center justify-between transition-[height] duration-300",
-            isScrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+            isScrolled ? "h-16 lg:h-[4.5rem]" : "h-[4.5rem] lg:h-[5.25rem]"
           )}
         >
-          {/* Logo */}
-          <a href="#home" className="group flex items-center gap-2">
+          {/* Logo + brand taglines */}
+          <a href="#home" className="group flex items-center gap-3 sm:gap-4">
             <BrandLogo
+              bare
               priority
               className="transition-transform duration-300 group-hover:-translate-y-0.5"
             />
+            <span
+              className="hidden h-9 w-px bg-border sm:block"
+              aria-hidden
+            />
+            <span className="hidden flex-col justify-center leading-tight sm:flex">
+              <span className="text-sm font-semibold text-foreground">
+                An <span className="text-accent">AI</span>-powered company
+              </span>
+              <span className="ai-section-kicker text-[0.625rem] text-accent/85">
+                Global Intellectual Property Service
+              </span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -96,17 +109,16 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "relative text-sm font-medium text-primary-foreground/74 transition-colors after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:text-primary-foreground hover:after:scale-x-100",
+                  "relative text-sm font-medium text-muted-foreground transition-colors after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:text-foreground hover:after:scale-x-100",
                   activeSection === link.href.slice(1) &&
-                    "text-primary-foreground after:scale-x-100"
+                    "text-foreground after:scale-x-100"
                 )}
               >
                 {link.name}
               </a>
             ))}
             <Button
-              variant="secondary"
-              className="bg-primary-foreground text-primary shadow-[0_12px_32px_-22px_oklch(0.985_0_0_/_0.85)] hover:-translate-y-0.5 hover:bg-primary-foreground/90"
+              className="shadow-[0_14px_34px_-22px_var(--primary)] hover:-translate-y-0.5"
               asChild
             >
               <a href="#contact">Get Consultation</a>
@@ -115,7 +127,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-md p-2 text-primary-foreground transition-colors hover:bg-primary-foreground/10 lg:hidden"
+            className="rounded-md p-2 text-foreground transition-colors hover:bg-foreground/5 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -126,27 +138,23 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="animate-in fade-in slide-in-from-top-2 border-t border-primary-foreground/10 py-4 lg:hidden">
+          <div className="animate-in fade-in slide-in-from-top-2 border-t border-border py-4 lg:hidden">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "rounded-md px-2 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground",
+                    "rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/5 hover:text-foreground",
                     activeSection === link.href.slice(1) &&
-                      "bg-primary-foreground/10 text-primary-foreground"
+                      "bg-foreground/5 text-foreground"
                   )}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button
-                variant="secondary"
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 w-full mt-2"
-                asChild
-              >
+              <Button className="w-full mt-2" asChild>
                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>
                   Get Consultation
                 </a>
