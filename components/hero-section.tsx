@@ -12,6 +12,14 @@ export function HeroSection() {
 
       <div className="container relative z-10 mx-auto sm:px-6 lg:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/18 bg-primary-foreground/8 px-4 py-1.5 text-sm font-medium text-primary-foreground/85 backdrop-blur-sm">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_var(--accent)]"
+              aria-hidden
+            />
+            An <span className="font-semibold text-accent">AI</span>-powered company
+          </span>
+
           <h1 className="mb-6 text-4xl font-bold leading-tight text-primary-foreground sm:text-5xl lg:text-6xl">
             <span className="block text-balance">Protecting Your</span>
             <span className="block text-balance ai-text-shimmer">
@@ -19,9 +27,13 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="mx-auto mb-9 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/72 sm:text-xl">
+          <p className="mx-auto mb-5 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/72 sm:text-xl">
             EasyIP Group is a world-class intellectual property consultancy firm.
             We help businesses secure, manage, and leverage their IP assets for sustainable competitive advantage.
+          </p>
+
+          <p className="ai-section-kicker mx-auto mb-9 text-accent/90">
+            Global Intellectual Property Service
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

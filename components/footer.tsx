@@ -21,7 +21,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-foreground text-background">
+    <footer className="relative bg-primary text-primary-foreground">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
         aria-hidden
@@ -31,11 +31,16 @@ export function Footer() {
         <div className="py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <a href="/#home" className="group mb-4 flex items-center gap-2">
+            <a href="/#home" className="group mb-3 flex items-center gap-2">
               <BrandLogo className="transition-transform duration-300 group-hover:-translate-y-0.5" />
             </a>
+            <p className="mb-4 text-sm font-medium text-background/85">
+              An <span className="font-semibold text-accent">AI</span>-powered company
+              <span className="mx-2 text-background/30">·</span>
+              <span className="text-background/70">Global Intellectual Property Service</span>
+            </p>
             <p className="text-background/70 text-sm leading-relaxed">
-            EasyIP Group is a world-class intellectual property consultancy firm, 
+            EasyIP Group is a world-class intellectual property consultancy firm,
             helping businesses protect and leverage their innovations.
             </p>
           </div>
@@ -91,14 +96,6 @@ export function Footer() {
               </p>
               <p>
                 <a
-                  href="tel:+6590165019"
-                  className="hover:text-background transition-colors"
-                >
-                  +65 90165019
-                </a>
-              </p>
-              <p>
-                <a
                   href="mailto:info@easyipgroup.com"
                   className="hover:text-background transition-colors"
                 >
@@ -113,7 +110,11 @@ export function Footer() {
         <div className="border-t border-background/10 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-background/50 text-center sm:text-left">
-              &copy; {currentYear} EasyIP Group. All rights reserved.
+              &copy; {currentYear} EASYIP GROUP PTE LTD
+              <span className="mx-2 text-background/25">·</span>
+              UEN 202620711M
+              <span className="mx-2 text-background/25">·</span>
+              All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a

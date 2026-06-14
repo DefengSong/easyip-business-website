@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { MapPin, Phone, Mail, Send, CheckCircle2 } from "lucide-react"
+import { MapPin, Mail, Send, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -13,11 +13,6 @@ const contactInfo = [
     icon: MapPin,
     title: "Address",
     details: ["3 Gambas Crescent #04-01", "Nordcom 1 Singapore 757088"],
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    details: ["+65 90165019"],
   },
   {
     icon: Mail,

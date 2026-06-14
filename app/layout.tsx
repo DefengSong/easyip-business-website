@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'EasyIP Group | Protecting Your Innovations',
-  description: 'Singapore-based IP consultancy specializing in patent applications, trademark registration, IP strategy, and dispute resolution. Protect your intellectual property with our expert team.',
+  description: 'EasyIP Group is an AI-powered Singapore-based IP consultancy delivering global intellectual property services — patent applications, trademark registration, IP strategy, and dispute resolution. Protect your intellectual property with our expert team.',
   keywords: ['IP consultancy', 'patent applications', 'trademark registration', 'Singapore', 'intellectual property', 'IP strategy'],
   icons: {
     icon: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0a1a2f',
+  themeColor: '#0f1e3d',
 }
 
 export default function RootLayout({
