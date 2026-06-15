@@ -82,6 +82,9 @@ export default function PrivacyPolicyPage() {
                 https://www.easyipgroup.com
               </a>
             </p>
+            <p className="mt-2 text-[13px] leading-[1.45] text-muted-foreground">
+              Last updated: 15 June 2026
+            </p>
           </div>
         </div>
       </section>
@@ -198,22 +201,53 @@ export default function PrivacyPolicyPage() {
                 3.4 Third-Party Tools and Tracking Technologies
               </h3>
               <p>
-                As of the effective date of this Privacy Policy, based on our
-                current understanding of the publicly accessible website setup,
-                we do not knowingly use Google Analytics, Meta Pixel, Google
-                Ads tracking tags, Google reCAPTCHA, newsletter subscription
-                tools, online payment processors, or third-party cookie-consent
-                tools on the public website.
+                To operate and improve our website, deliver messages, and
+                manage newsletter subscriptions, we use a limited number of
+                third-party service providers, including:
+              </p>
+              <BulletList
+                items={[
+                  "A privacy-focused website analytics tool (Vercel Web Analytics) that provides aggregated usage statistics and, based on its standard configuration, does not use advertising cookies;",
+                  "An email delivery service (Resend) used to deliver messages submitted through our contact form;",
+                  "An email marketing platform (Zoho Campaigns, provided by Zoho Corporation) used to manage newsletter subscriptions and send communications, if you choose to subscribe.",
+                ]}
+              />
+              <p>
+                As of the effective date of this Privacy Policy, we do not
+                knowingly use Google Analytics, Meta Pixel, Google Ads tracking
+                tags, Google reCAPTCHA, online payment processors, or
+                third-party cookie-consent tools on the public website.
               </p>
               <p>
-                If we introduce such tools in the future, we will update this
-                Privacy Policy and, where required by applicable law, request
-                consent before using non-essential cookies or tracking
+                If we introduce additional tools in the future, we will update
+                this Privacy Policy and, where required by applicable law,
+                request consent before using non-essential cookies or tracking
                 technologies.
               </p>
 
               <h3 className="pt-1 text-[13px] font-semibold leading-[1.45] text-foreground">
-                3.5 Information From Third Parties
+                3.5 Newsletter Subscription
+              </h3>
+              <p>
+                If you choose to subscribe to our newsletter through our
+                website, we collect your email address in order to send you
+                updates, intellectual property insights, and other
+                communications.
+              </p>
+              <p>
+                We use a double opt-in process: after you submit your email
+                address, you will receive a confirmation email, and you are only
+                added to our mailing list once you confirm. Your subscription is
+                managed using a third-party email marketing platform (Zoho
+                Campaigns, provided by Zoho Corporation), which processes your
+                email address on our behalf and may store or process it outside
+                Singapore (see &ldquo;International Transfers&rdquo;). You can
+                unsubscribe at any time using the link included in our emails or
+                by contacting us.
+              </p>
+
+              <h3 className="pt-1 text-[13px] font-semibold leading-[1.45] text-foreground">
+                3.6 Information From Third Parties
               </h3>
               <p>
                 We may receive personal data from third parties, including:
@@ -286,24 +320,28 @@ export default function PrivacyPolicyPage() {
 
             <PolicySection title="7. Cookies and Website Technologies">
               <p>
-                Our public website currently appears to operate primarily as an
-                informational website with a contact form. We may collect
-                limited technical data generated through hosting, security,
-                mail delivery, or server log infrastructure.
+                Our public website operates primarily as an informational
+                website with a contact form and a newsletter subscription
+                feature. We may collect limited technical data generated through
+                hosting, security, analytics, mail delivery, or server log
+                infrastructure.
               </p>
               <p>
-                As of the effective date of this Privacy Policy, we do not
-                knowingly use Google Analytics, Meta Pixel, Google Ads tracking
-                tags, Google reCAPTCHA, newsletter subscription tools, online
+                As described in section 3.4, we use a privacy-focused website
+                analytics tool (Vercel Web Analytics), an email delivery service
+                (Resend), and an email marketing platform (Zoho Campaigns) for
+                newsletter subscriptions. As of the effective date of this
+                Privacy Policy, we do not knowingly use Google Analytics, Meta
+                Pixel, Google Ads tracking tags, Google reCAPTCHA, online
                 payment processors, or third-party cookie-consent tools on the
                 public website.
               </p>
               <p>
-                If we later use cookies, analytics tools, advertising pixels,
-                newsletter tools, payment processors, or similar technologies,
-                we will update this Privacy Policy and, where required, provide
-                a cookie notice or consent mechanism before using non-essential
-                cookies or tracking technologies.
+                If we later use additional cookies, advertising pixels, payment
+                processors, or similar technologies, we will update this Privacy
+                Policy and, where required, provide a cookie notice or consent
+                mechanism before using non-essential cookies or tracking
+                technologies.
               </p>
               <p>
                 You may disable cookies through your browser settings, but some
@@ -323,6 +361,7 @@ export default function PrivacyPolicyPage() {
                   "Foreign associates, IP agents, patent attorneys, trademark attorneys, lawyers, or other professional advisers;",
                   "Intellectual property offices, company registries, government agencies, courts, dispute resolution bodies, or regulators;",
                   "IT hosting providers, cloud service providers, website operators, email service providers, cybersecurity providers, and website mail-service providers;",
+                  "Website analytics providers and email marketing or newsletter platform providers (such as Zoho Campaigns) that process data on our behalf;",
                   "Payment processors, banks, accountants, auditors, and tax advisers, if relevant to a transaction or client matter;",
                   "Business partners or service providers involved in delivering our services;",
                   "Any party where disclosure is required or permitted by law;",
@@ -445,6 +484,12 @@ export default function PrivacyPolicyPage() {
               <p>
                 We may send you updates, service information, newsletters, or
                 marketing communications where permitted by law.
+              </p>
+              <p>
+                If you subscribe to our newsletter through our website, we use a
+                double opt-in process (email confirmation) and manage your
+                subscription using a third-party email marketing platform (Zoho
+                Campaigns). See section 3.5 for details.
               </p>
               <p>
                 You may opt out of marketing communications at any time by
