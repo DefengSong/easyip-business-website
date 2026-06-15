@@ -119,7 +119,13 @@ export async function POST(request: Request) {
       }
     )
 
-    const data = await res.json().catch(() => null)
+    const raw = await res.text()
+    let data: Record<string, unknown> | null = null
+    try {
+      data = JSON.parse(raw)
+    } catch {
+      data = null
+    }
     const status = String(data?.status || "").toLowerCase()
     const message = String(data?.message || "")
     const lowerMessage = message.toLowerCase()
@@ -130,12 +136,17 @@ export async function POST(request: Request) {
       if (lowerMessage.includes("already") || lowerMessage.includes("exist")) {
         return NextResponse.json({ success: true, requiresConfirmation: false })
       }
-      console.error("Zoho listsubscribe error:", data)
+      console.error("Zoho listsubscribe error:", res.status, raw)
       return NextResponse.json(
         {
           error: "Failed to subscribe. Please try again later.",
           // TEMP debug — remove after verifying the integration.
-          detail: { code: data?.code, message: data?.message },
+          detail: {
+            httpStatus: res.status,
+            code: data?.code,
+            message: data?.message,
+            raw: raw?.slice(0, 400),
+          },
         },
         { status: 502 }
       )
