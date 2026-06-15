@@ -102,22 +102,20 @@ export async function POST(request: Request) {
       )
     }
 
-    const body = new URLSearchParams({
-      listkey: listKey,
+    // Zoho's listsubscribe expects its parameters in the query string,
+    // not the POST body.
+    const query = new URLSearchParams({
       resfmt: "JSON",
+      listkey: listKey,
       contactinfo: JSON.stringify({ "Contact Email": trimmedEmail }),
       source: "website",
     })
 
     const res = await fetch(
-      `https://${campaignsDomain}/api/v1.1/json/listsubscribe`,
+      `https://${campaignsDomain}/api/v1.1/json/listsubscribe?${query.toString()}`,
       {
         method: "POST",
-        headers: {
-          Authorization: `Zoho-oauthtoken ${token}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: body.toString(),
+        headers: { Authorization: `Zoho-oauthtoken ${token}` },
       }
     )
 
@@ -134,7 +132,11 @@ export async function POST(request: Request) {
       }
       console.error("Zoho listsubscribe error:", data)
       return NextResponse.json(
-        { error: "Failed to subscribe. Please try again later." },
+        {
+          error: "Failed to subscribe. Please try again later.",
+          // TEMP debug — remove after verifying the integration.
+          detail: { code: data?.code, message: data?.message },
+        },
         { status: 502 }
       )
     }
