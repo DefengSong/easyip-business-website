@@ -31,6 +31,9 @@ function isValidEmail(email: string): boolean {
 // re-minting on every sign-up.
 let cachedToken: { value: string; expiresAt: number } | null = null
 
+// TEMP debug — metadata from the most recent token refresh.
+let lastTokenMeta: Record<string, unknown> = { note: "no refresh yet (cached)" }
+
 async function getAccessToken(): Promise<string | null> {
   const now = Date.now()
   if (cachedToken && cachedToken.expiresAt > now + 60_000) {
@@ -59,6 +62,14 @@ async function getAccessToken(): Promise<string | null> {
   })
 
   const data = await res.json().catch(() => null)
+  lastTokenMeta = {
+    httpStatus: res.status,
+    hasToken: Boolean(data?.access_token),
+    scope: data?.scope,
+    api_domain: data?.api_domain,
+    expires_in: data?.expires_in,
+    error: data?.error,
+  }
   if (!res.ok || !data?.access_token) {
     console.error("Zoho token refresh failed:", data)
     return null
@@ -145,7 +156,8 @@ export async function POST(request: Request) {
             httpStatus: res.status,
             code: data?.code,
             message: data?.message,
-            raw: raw?.slice(0, 400),
+            raw: raw?.slice(0, 200),
+            tokenMeta: lastTokenMeta,
           },
         },
         { status: 502 }
