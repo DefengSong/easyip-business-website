@@ -1,5 +1,6 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
+import { subscribeToZohoList } from "@/lib/zoho"
 
 function getResend() {
   const key = process.env.RESEND_API_KEY
@@ -42,7 +43,7 @@ function isValidEmail(email: string): boolean {
  */
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, message } = await request.json()
+    const { name, email, phone, message, subscribe } = await request.json()
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -109,7 +110,22 @@ export async function POST(request: Request) {
       )
     }
 
-    return NextResponse.json({ success: true, id: data?.id })
+    // Optional marketing opt-in: only when the visitor ticked the box.
+    // Best-effort — a Zoho hiccup must never fail the enquiry itself.
+    let subscribed = false
+    if (subscribe === true) {
+      try {
+        const result = await subscribeToZohoList(trimmedEmail)
+        subscribed = result.ok
+        if (!result.ok) {
+          console.error("Contact-form newsletter opt-in failed:", result.reason)
+        }
+      } catch (err) {
+        console.error("Contact-form newsletter opt-in threw:", err)
+      }
+    }
+
+    return NextResponse.json({ success: true, id: data?.id, subscribed })
   } catch (error) {
     console.error("Contact form error:", error)
     return NextResponse.json(

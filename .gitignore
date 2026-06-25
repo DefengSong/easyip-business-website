@@ -10,6 +10,13 @@ next.user-config.*
 # Environment variables
 .env*.local
 
+# Local secrets / notes — never commit
+Keys.txt
+
+# Editor / build artifacts
+.claude/
+tsconfig.tsbuildinfo
+
 # Common ignores
 node_modules
 .next/

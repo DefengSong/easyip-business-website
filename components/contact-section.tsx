@@ -5,7 +5,14 @@ import { MapPin, Mail, Send, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Field, FieldLabel, FieldGroup } from "@/components/ui/field"
+import { Checkbox } from "@/components/ui/checkbox"
+import {
+  Field,
+  FieldLabel,
+  FieldGroup,
+  FieldContent,
+  FieldDescription,
+} from "@/components/ui/field"
 import { Reveal } from "@/components/reveal"
 
 const contactInfo = [
@@ -28,6 +35,7 @@ export function ContactSection() {
     phone: "",
     message: "",
   })
+  const [subscribe, setSubscribe] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState("")
@@ -50,7 +58,7 @@ export function ContactSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, subscribe }),
       })
 
       if (!response.ok) {
@@ -60,6 +68,7 @@ export function ContactSection() {
 
       setIsSubmitted(true)
       setFormData({ name: "", email: "", phone: "", message: "" })
+      setSubscribe(false)
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred")
     } finally {
@@ -175,6 +184,30 @@ export function ContactSection() {
                         rows={5}
                         className="resize-none bg-background transition-shadow focus-visible:ring-accent/20"
                       />
+                    </Field>
+
+                    <Field orientation="horizontal" className="items-start">
+                      <Checkbox
+                        id="subscribe"
+                        name="subscribe"
+                        checked={subscribe}
+                        onCheckedChange={(checked) =>
+                          setSubscribe(checked === true)
+                        }
+                        className="mt-0.5"
+                      />
+                      <FieldContent>
+                        <FieldLabel
+                          htmlFor="subscribe"
+                          className="font-normal text-muted-foreground cursor-pointer"
+                        >
+                          Keep me posted with EasyIP&apos;s newsletter
+                        </FieldLabel>
+                        <FieldDescription>
+                          Optional — occasional IP news, guidance, and updates.
+                          Unsubscribe anytime.
+                        </FieldDescription>
+                      </FieldContent>
                     </Field>
 
                     {error && (
